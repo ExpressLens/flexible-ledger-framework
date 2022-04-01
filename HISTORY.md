@@ -8,4 +8,16 @@
 
 **New features**
 - Introduced `GenericStatusCode` enum for developers to use consistent status codes in a few scenario's (`success` for happy flow and `ignored` if the message isn't interpreted by your plugin)
--`UlaResponse` has an extra optional field `e
+-`UlaResponse` has an extra optional field `error` for better error handling
+
+**Deprecations**
+- `HttpHandler` class is now deprecated and will be removed in a future major release ([#11](https://github.com/rabobank-blockchain/universal-ledger-agent/issues/11))
+- `Message` class is now deprecated and will be renamed to `UlaMessage` to give more clarity
+
+**Enhancements**
+- Renamed `ulaMessage.ts` to `ula-message.ts` for consistency
+- Refactored HttpService and HttpHandler tests
+- Stryker score back to 100 (stable)
+- Improved documentation
+- Dependency upgrades:
+  - class-transformer: 0
