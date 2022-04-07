@@ -36,4 +36,22 @@
   - mocha: 7.0.0 to 7.2.0
   - nyc: 15.0.0 to 15.1.0
   - sinon: 8.0.4 to 8.1.1
-  - si
+  - sinon-chai: 3.4.0 to 3.5.0
+  - source-map-support: 0.5.16 to 0.5.19
+  - ts-node: 8.5.4 to 8.10.2
+  - typescript: 3.4.5 to 3.9.7
+
+# 0.1.3 / 23-03-2020
+
+**Enhancements:**
+- Downgraded TypeScript to v3.4.5 to provide proper `d.ts` files (v3.7 breaks this)
+
+# 0.1.2 / 08-01-2020
+
+**Enhancements:**
+- Updated all dependencies, fixed [CVE-2019-19919](https://github.com/advisories/GHSA-w457-6q6x-cgp9)
+- Introduced [HISTORY.md](HISTORY.md)
+
+#0.1.1 / 17-09-2019
+
+*Initial release*
