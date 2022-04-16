@@ -5,4 +5,10 @@ export declare class EventHandler {
     private enabledPlugins;
     constructor(plugins: any[]);
     /**
-  
+     * Broadcasts a message (jsonObject) to all enabled plugins
+     *
+     * @param jsonObject
+     * @param callback
+     */
+    processMsg(jsonObject: any, callback: UlaCallback): Promise<PluginResult[]>;
+}
