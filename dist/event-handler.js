@@ -40,4 +40,21 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", {value: true})
-exports.EventHandler
+exports.EventHandler = void 0
+const _1 = require(".");
+const plugin_result_1 = require("./model/plugin-result");
+class EventHandler {
+    // private disabledPlugins: Plugin[] = []
+    constructor(plugins) {
+        this.plugins = plugins;
+        this.enabledPlugins = [];
+        for (const plugin of plugins) {
+            plugin.initialize(this);
+            this.enabledPlugins.push(plugin);
+        }
+    }
+    /**
+     * Broadcasts a message (jsonObject) to all enabled plugins
+     *
+     * @param jsonObject
+ 
