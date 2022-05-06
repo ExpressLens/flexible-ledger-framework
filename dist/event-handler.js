@@ -70,3 +70,17 @@ class EventHandler {
                         statusCode = yield plugin.handleEvent(new _1.UlaMessage(jsonObject), callback);
                     }
                     catch (err) {
+                        statusCode = err instanceof _1.UlaError ? err.statusCode : 'error'; // Unknown error
+                        callback(new _1.UlaResponse({ statusCode, body: {}, error: err }));
+                    }
+                    finally {
+                        resolve(new plugin_result_1.PluginResult(plugin.name, statusCode));
+                    }
+                })));
+            }
+            return Promise.all(promises);
+        });
+    }
+}
+exports.EventHandler = EventHandler;
+//# sourceMappingURL=event-handler.js.map
