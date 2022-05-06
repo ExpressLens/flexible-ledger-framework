@@ -57,4 +57,16 @@ class EventHandler {
      * Broadcasts a message (jsonObject) to all enabled plugins
      *
      * @param jsonObject
- 
+     * @param callback
+     */
+    processMsg(jsonObject, callback) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const promises = [];
+            // Broadcast the event
+            for (const plugin of this.enabledPlugins) {
+                promises.push(new Promise((resolve) => __awaiter(this, void 0, void 0, function* () {
+                    let statusCode = 'unknown';
+                    try {
+                        statusCode = yield plugin.handleEvent(new _1.UlaMessage(jsonObject), callback);
+                    }
+                    catch (err) {
