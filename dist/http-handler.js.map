@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "file": "http-handler.js",
+  "sourceRoot": "",
+  "sources": [
+    "../src/http-handle
