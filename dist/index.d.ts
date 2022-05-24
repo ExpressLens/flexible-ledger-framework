@@ -25,4 +25,6 @@ export { PluginResult } from './model/plugin-result';
 export { UlaError } from './model/ula-error';
 export { Plugin } from './interface/plugin';
 export { HttpService } from './interface/http-service';
-export { UlaCallback } from './interface/ula-ca
+export { UlaCallback } from './interface/ula-callback';
+export { BrowserHttpService } from './service/browser-http-service';
+export { GenericStatusCode } from './interface/generic-status-code';
