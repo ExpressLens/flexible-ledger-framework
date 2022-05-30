@@ -33,4 +33,22 @@
 Object.defineProperty(exports, "__esModule", {value: true})
 exports.GenericStatusCode = void 0
 var GenericStatusCode;
-(function (GenericStatusC
+(function (GenericStatusCode) {
+    /**
+     * In case your plugin ignored
+     * the incoming message.
+     */
+    GenericStatusCode["Ignored"] = "ignored";
+    /**
+     * Generic, unknown error
+     * Please use a more specific
+     * error code in your plugin!
+     */
+    GenericStatusCode["Error"] = "error";
+    /**
+     * Use this code once your plugin
+     * successfully finished its work.
+     */
+    GenericStatusCode["Success"] = "success";
+})(GenericStatusCode = exports.GenericStatusCode || (exports.GenericStatusCode = {}));
+//# sourceMappingURL=g
