@@ -51,4 +51,4 @@ var GenericStatusCode;
      */
     GenericStatusCode["Success"] = "success";
 })(GenericStatusCode = exports.GenericStatusCode || (exports.GenericStatusCode = {}));
-//# sourceMappingURL=g
+//# sourceMappingURL=generic-status-code.js.map
