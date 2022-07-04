@@ -52,3 +52,27 @@ export declare class Attestation {
      * @return {string[]}
      */
     get type(): string[];
+    /**
+     * The expiry time of this attestation
+     * @return {Date|undefined}
+     */
+    get expires(): Date | undefined;
+    /**
+     * The datetime when this attestation
+     * was issued.
+     * @return Date
+     */
+    get datetime(): Date;
+    /**
+     * The statements of this attestation.
+     * This is a key-value pair array, just
+     * like a set of claims or CredentialSubjects.
+     * @return any
+     */
+    get statements(): any;
+    /**
+     * Converts this object to a json object
+     * @return object
+     */
+    toJSON(): object;
+}
