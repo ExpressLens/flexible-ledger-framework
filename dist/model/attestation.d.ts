@@ -29,4 +29,26 @@ export declare class Attestation {
      * @return string
      */
     get uuid(): string;
-    /*
+    /**
+     * The attestor/issuer public key
+     * (Can also be a DID)
+     * @return string
+     */
+    get attestorPubKey(): string;
+    /**
+     * The forPubKey (the subject/holder)
+     * @return {string|undefined}
+     */
+    get forPubKey(): string | undefined;
+    /**
+     * Gives context to the contents of
+     * this attestation. Usually this is
+     * a collection of schema.org url's.
+     * @return {string[]}
+     */
+    get context(): string[];
+    /**
+     * Room for various types/properties
+     * @return {string[]}
+     */
+    get type(): string[];
