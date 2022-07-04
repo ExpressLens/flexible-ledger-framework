@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "file": "attestation.js",
+  "sourceRoot": "",
+  "sources": [
+    "../../src/model/attestation.ts"
+  ],
+  "names": [],
+  "mappings": ";AAAA;;;;;;;;;;;;;;GAcG;;;;;;;;;AAEH,yDAAwD;AACxD,+BAAiC;AAajC;;;;;GAKG;AACH,MAAa,WAAW;IAUtB,YAAa,WAAyB;QACpC,IAAI,CAAC,WAAW,CAAC,cAAc,IAAI,CAAC,WAAW,CAAC,OAAO,IAAI,WAAW,CAAC,OAAO,CAAC,MAAM,KAAK,CAAC;eACtF,WAAW,CAAC,IA
