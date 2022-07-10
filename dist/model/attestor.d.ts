@@ -22,4 +22,29 @@ export declare class Attestor {
     private readonly _datetime;
     private _transactions?;
     private _receivedAttestations?;
-    private _issuedAtte
+    private _issuedAttestations?;
+    constructor(attestor: IAttestor);
+    /**
+     * The (company) name of the attestor
+     * @return string
+     */
+    get name(): string;
+    /**
+     * The icon respresentation of this attestor
+     * @return string
+     */
+    get icon(): string;
+    /**
+     * The public key for this attestor
+     * @return string
+     */
+    get pubKey(): string;
+    /**
+     * The date/time when this attestor
+     * was added to the (local) storage
+     * @return Date
+     */
+    get datetime(): Date;
+    /**
+     * Transactions made by this attestor
+   
