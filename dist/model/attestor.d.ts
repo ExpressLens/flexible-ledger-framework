@@ -47,4 +47,19 @@ export declare class Attestor {
     get datetime(): Date;
     /**
      * Transactions made by this attestor
-   
+     * @return {Transaction[]|undefined}
+     */
+    get transactions(): Transaction[] | undefined;
+    /**
+     * Sets the transactions received by this attestor
+     * @param {Transaction[]|undefined} transactions
+     */
+    set transactions(transactions: Transaction[] | undefined);
+    /**
+     * The attestations received by this attestor
+     * @return {Attestation[]|undefined}
+     */
+    get receivedAttestations(): Attestation[] | undefined;
+    /**
+     * Sets the attestations received by this attestor
+ 
