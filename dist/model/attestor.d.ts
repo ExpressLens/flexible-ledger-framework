@@ -62,4 +62,19 @@ export declare class Attestor {
     get receivedAttestations(): Attestation[] | undefined;
     /**
      * Sets the attestations received by this attestor
- 
+     * @param {Attestation[]|undefined} attestations
+     */
+    set receivedAttestations(attestations: Attestation[] | undefined);
+    /**
+     * The attestations issued by this attestation
+     * @return {Attestation[]|undefined}
+     */
+    get issuedAttestations(): Attestation[] | undefined;
+    /**
+     * Sets the attestations issued by this attestor
+     * @param {Attestation[]|undefined} attestations
+     */
+    set issuedAttestations(attestations: Attestation[] | undefined);
+    /**
+     * Converts a this object to a json object
+     * @ret
