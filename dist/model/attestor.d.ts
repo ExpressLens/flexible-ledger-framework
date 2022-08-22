@@ -77,4 +77,7 @@ export declare class Attestor {
     set issuedAttestations(attestations: Attestation[] | undefined);
     /**
      * Converts a this object to a json object
-     * @ret
+     * @return object
+     */
+    toJSON(): object;
+}
