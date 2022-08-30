@@ -57,4 +57,22 @@ class Attestor {
         this._pubKey = attestor.pubKey;
         this._datetime = new Date(attestor.datetime);
         this._transactions = attestor.transactions ? attestor.transactions.map(x => new transaction_1.Transaction(x)) : undefined;
-        this._receivedAttestations = attestor
+        this._receivedAttestations = attestor.receivedAttestations ? attestor.receivedAttestations.map(x => new attestation_1.Attestation(x)) : undefined;
+        this._issuedAttestations = attestor.issuedAttestations ? attestor.issuedAttestations.map(x => new attestation_1.Attestation(x)) : undefined;
+    }
+    /**
+     * The (company) name of the attestor
+     * @return string
+     */
+    get name() {
+        return this._name;
+    }
+    /**
+     * The icon respresentation of this attestor
+     * @return string
+     */
+    get icon() {
+        return this._icon;
+    }
+    /**
+   
