@@ -47,4 +47,14 @@ const class_transformer_1 = require("class-transformer");
  * attestors / issuers  back to this
  * model.
  */
-class Attes
+class Attestor {
+    constructor(attestor) {
+        if (!attestor.name || !attestor.icon || !attestor.pubKey || !attestor.datetime) {
+            throw new ReferenceError('One or more fields are empty');
+        }
+        this._name = attestor.name;
+        this._icon = attestor.icon;
+        this._pubKey = attestor.pubKey;
+        this._datetime = new Date(attestor.datetime);
+        this._transactions = attestor.transactions ? attestor.transactions.map(x => new transaction_1.Transaction(x)) : undefined;
+        this._receivedAttestations = attestor
