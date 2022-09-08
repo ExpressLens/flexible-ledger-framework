@@ -118,4 +118,22 @@ class Attestor {
         this._receivedAttestations = attestations;
     }
     /**
-  
+     * The attestations issued by this attestation
+     * @return {Attestation[]|undefined}
+     */
+    get issuedAttestations() {
+        return this._issuedAttestations;
+    }
+    /**
+     * Sets the attestations issued by this attestor
+     * @param {Attestation[]|undefined} attestations
+     */
+    set issuedAttestations(attestations) {
+        this._issuedAttestations = attestations;
+    }
+    /**
+     * Converts a this object to a json object
+     * @return object
+     */
+    toJSON() {
+        return class_trans
