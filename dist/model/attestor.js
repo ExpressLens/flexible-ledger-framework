@@ -98,4 +98,24 @@ class Attestor {
     }
     /**
      * Sets the transactions received by this attestor
-     * @param {Transact
+     * @param {Transaction[]|undefined} transactions
+     */
+    set transactions(transactions) {
+        this._transactions = transactions;
+    }
+    /**
+     * The attestations received by this attestor
+     * @return {Attestation[]|undefined}
+     */
+    get receivedAttestations() {
+        return this._receivedAttestations;
+    }
+    /**
+     * Sets the attestations received by this attestor
+     * @param {Attestation[]|undefined} attestations
+     */
+    set receivedAttestations(attestations) {
+        this._receivedAttestations = attestations;
+    }
+    /**
+  
