@@ -75,4 +75,27 @@ class Attestor {
         return this._icon;
     }
     /**
-   
+     * The public key for this attestor
+     * @return string
+     */
+    get pubKey() {
+        return this._pubKey;
+    }
+    /**
+     * The date/time when this attestor
+     * was added to the (local) storage
+     * @return Date
+     */
+    get datetime() {
+        return new Date(this._datetime);
+    }
+    /**
+     * Transactions made by this attestor
+     * @return {Transaction[]|undefined}
+     */
+    get transactions() {
+        return this._transactions;
+    }
+    /**
+     * Sets the transactions received by this attestor
+     * @param {Transact
