@@ -136,4 +136,25 @@ class Attestor {
      * @return object
      */
     toJSON() {
-        return class_trans
+        return class_transformer_1.classToPlain(this, { excludePrefixes: ['_'] });
+    }
+}
+__decorate([
+    class_transformer_1.Expose()
+], Attestor.prototype, "name", null);
+__decorate([
+    class_transformer_1.Expose()
+], Attestor.prototype, "icon", null);
+__decorate([
+    class_transformer_1.Expose()
+], Attestor.prototype, "pubKey", null);
+__decorate([
+    class_transformer_1.Expose()
+], Attestor.prototype, "datetime", null);
+__decorate([
+    class_transformer_1.Expose()
+], Attestor.prototype, "transactions", null);
+__decorate([
+    class_transformer_1.Expose()
+], Attestor.prototype, "receivedAttestations", null);
+__de
