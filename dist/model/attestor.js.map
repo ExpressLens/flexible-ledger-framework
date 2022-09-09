@@ -1,0 +1,9 @@
+{
+  "version": 3,
+  "file": "attestor.js",
+  "sourceRoot": "",
+  "sources": [
+    "../../src/model/attestor.ts"
+  ],
+  "names": [],
+  "mappings": ";AAAA;;;;;;;;;;;;;;GAcG;;;;;;;;;AAEH,+CAAyD;AACzD,+CAAyD;AACzD,yDAAwD;AAYxD;;;;;GAKG;AACH,MAAa,QAAQ;IASnB,YAAa,QAAmB;QAC9B,IAAI,CAAC,QAAQ,CAAC,IAAI,IAAI,CAAC,QAAQ,CAAC,IAAI,IAAI,CAAC,QAAQ,CAAC,MAAM,IAAI,CAAC,QAAQ,CAAC,QAAQ,EAAE;YAC9E,MAAM,IAAI,cAAc,CAAC,8BAA8B,CAAC,C

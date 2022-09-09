@@ -157,4 +157,8 @@ __decorate([
 __decorate([
     class_transformer_1.Expose()
 ], Attestor.prototype, "receivedAttestations", null);
-__de
+__decorate([
+    class_transformer_1.Expose()
+], Attestor.prototype, "issuedAttestations", null);
+exports.Attestor = Attestor;
+//# sourceMappingURL=attestor.js.map
