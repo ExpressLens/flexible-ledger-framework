@@ -37,4 +37,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 Object.defineProperty(exports, "__esModule", {value: true})
-exports.PluginResult = vo
+exports.PluginResult = void 0
+const class_transformer_1 = require("class-transformer");
+/**
+ * An array of PluginResults will be
+ * returned by the ULA after handling
+ * all messages
+ */
+class PluginResult {
+    constructor(pluginName, statusCode) {
+        this._pluginName = pluginName;
+        this._statusCode = statusCode;
+    }
+    /**
+     * The plugin exited with
+     * this status code
+     * @return any
+     */
+    get statusCode() {
+        return this._statusCode;
+    }
+    /**
+     * The name of th
