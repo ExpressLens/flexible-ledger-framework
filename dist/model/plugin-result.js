@@ -58,4 +58,25 @@ class PluginResult {
         return this._statusCode;
     }
     /**
-     * The name of th
+     * The name of the plugin
+     * (Plugin.name property)
+     * @return string
+     */
+    get pluginName() {
+        return this._pluginName;
+    }
+    /**
+     * Converts a this object to a json object
+     * @return object
+     */
+    toJSON() {
+        return class_transformer_1.classToPlain(this, { excludePrefixes: ['_'] });
+    }
+}
+__decorate([
+    class_transformer_1.Expose()
+], PluginResult.prototype, "statusCode", null);
+__decorate([
+    class_transformer_1.Expose()
+], PluginResult.prototype, "pluginName", null);
+exports.PluginResult = Plug
