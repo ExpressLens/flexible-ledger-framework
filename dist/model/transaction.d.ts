@@ -35,4 +35,24 @@ export declare class Transaction {
     /**
      * The public key or DID from the attestor
      * @return string
-   
+     */
+    get attestorPubKey(): string;
+    /**
+     * When the transaction took place
+     * @return Date
+     */
+    get datetime(): Date;
+    /**
+     * The list of claims/credentialsubjects
+     * that have been attested during this transaction
+     * @return {Attestation[]}
+     */
+    get attest(): Attestation[];
+    /**
+     * The list of claims/credentialsubjects that
+     * have been revoked during this transaction
+     * @return {Attestation[]}
+     */
+    get revoke(): Attestation[];
+    /**
+     * The list of claims/credentialsubjects that
