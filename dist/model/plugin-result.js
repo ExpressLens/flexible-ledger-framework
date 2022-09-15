@@ -79,4 +79,5 @@ __decorate([
 __decorate([
     class_transformer_1.Expose()
 ], PluginResult.prototype, "pluginName", null);
-exports.PluginResult = Plug
+exports.PluginResult = PluginResult;
+//# sourceMappingURL=plugin-result.js.map
