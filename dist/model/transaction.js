@@ -47,4 +47,15 @@ const uuid_1 = require("uuid");
  * or send data from/to other parties.
  * It is possible to send and receive data
  * in one transaction. In that case, attest
- * and verifyRequest are
+ * and verifyRequest are both filled.
+ */
+class Transaction {
+    constructor(transaction) {
+        if (!transaction.attestorPubKey || transaction.datetime === '') {
+            throw new ReferenceError('One or more fields are empty');
+        }
+        this._uuid = transaction.uuid || uuid_1.v4();
+        this._attestorPubKey = transaction.attestorPubKey;
+        this._datetime = new Date(transaction.datetime);
+        this._attest = transaction.attest.map(x => new attestation_1.Attestation(x));
+        this._revoke = transaction.revoke.map(x
