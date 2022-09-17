@@ -58,4 +58,25 @@ class Transaction {
         this._attestorPubKey = transaction.attestorPubKey;
         this._datetime = new Date(transaction.datetime);
         this._attest = transaction.attest.map(x => new attestation_1.Attestation(x));
-        this._revoke = transaction.revoke.map(x
+        this._revoke = transaction.revoke.map(x => new attestation_1.Attestation(x));
+        this._verifyRequest = transaction.verifyRequest.map(x => new attestation_1.Attestation(x));
+        this._state = transaction.state;
+        this._error = transaction.error;
+    }
+    /**
+     * The uuid of the transaction
+     * @return string
+     */
+    get uuid() {
+        return this._uuid;
+    }
+    /**
+     * The public key or DID from the attestor
+     * @return string
+     */
+    get attestorPubKey() {
+        return this._attestorPubKey;
+    }
+    /**
+     * When the transaction took place
+  
