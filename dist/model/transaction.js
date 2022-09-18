@@ -101,4 +101,24 @@ class Transaction {
         return this._revoke;
     }
     /**
-     * The list of cla
+     * The list of claims/credentialsubjects that
+     * have been verified during this transaction
+     * @return {Attestation[]}
+     */
+    get verifyRequest() {
+        return this._verifyRequest;
+    }
+    /**
+     * Optional - the current state of this transaction
+     * Can be 'success', 'error' or 'pending'
+     * @return {string|undefined}
+     */
+    get state() {
+        return this._state;
+    }
+    /**
+     * Optional - the error message
+     * @return {string|undefined}
+     */
+    get error() {
+  
