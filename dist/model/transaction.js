@@ -142,4 +142,18 @@ __decorate([
 ], Transaction.prototype, "datetime", null);
 __decorate([
     class_transformer_1.Expose()
-], 
+], Transaction.prototype, "attest", null);
+__decorate([
+    class_transformer_1.Expose()
+], Transaction.prototype, "revoke", null);
+__decorate([
+    class_transformer_1.Expose()
+], Transaction.prototype, "verifyRequest", null);
+__decorate([
+    class_transformer_1.Expose()
+], Transaction.prototype, "state", null);
+__decorate([
+    class_transformer_1.Expose()
+], Transaction.prototype, "error", null);
+exports.Transaction = Transaction;
+//# sourceMappingURL=transaction.js.map
