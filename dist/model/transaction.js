@@ -121,4 +121,25 @@ class Transaction {
      * @return {string|undefined}
      */
     get error() {
-  
+        return this._error;
+    }
+    /**
+     * Converts a this object to a json object
+     * @return object
+     */
+    toJSON() {
+        return class_transformer_1.classToPlain(this, { excludePrefixes: ['_'] });
+    }
+}
+__decorate([
+    class_transformer_1.Expose()
+], Transaction.prototype, "uuid", null);
+__decorate([
+    class_transformer_1.Expose()
+], Transaction.prototype, "attestorPubKey", null);
+__decorate([
+    class_transformer_1.Expose()
+], Transaction.prototype, "datetime", null);
+__decorate([
+    class_transformer_1.Expose()
+], 
