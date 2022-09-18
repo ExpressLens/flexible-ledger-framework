@@ -79,4 +79,26 @@ class Transaction {
     }
     /**
      * When the transaction took place
-  
+     * @return Date
+     */
+    get datetime() {
+        return this._datetime;
+    }
+    /**
+     * The list of claims/credentialsubjects
+     * that have been attested during this transaction
+     * @return {Attestation[]}
+     */
+    get attest() {
+        return this._attest;
+    }
+    /**
+     * The list of claims/credentialsubjects that
+     * have been revoked during this transaction
+     * @return {Attestation[]}
+     */
+    get revoke() {
+        return this._revoke;
+    }
+    /**
+     * The list of cla
