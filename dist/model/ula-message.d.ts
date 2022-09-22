@@ -28,4 +28,21 @@ export declare class UlaMessage {
   constructor (obj: any);
 
   /**
-   * 
+   * The dynamic properties of the message
+   * @return any
+   */
+  get properties (): any;
+
+  /**
+   * Converts a this object to a json object
+   * @return object
+   */
+  toJSON (): object;
+}
+
+/**
+ * @deprecated Please use UlaMessage
+ * @see UlaMessage
+ */
+export declare class Message extends UlaMessage {
+}
