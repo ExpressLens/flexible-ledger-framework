@@ -31,4 +31,32 @@
  * limitations under the License.
  */
 Object.defineProperty(exports, "__esModule", {value: true})
-exports.Message 
+exports.Message = exports.UlaMessage = void 0
+
+/**
+ * The UlaMessage type is used to
+ * send messages (events) to ULA plugins.
+ * The object is entirely dynamic, but it
+ * does require a 'type' field, so the
+ * plugins can recognize (or ignore) the
+ * event.
+ */
+class UlaMessage {
+  constructor(obj) {
+    if (!obj.type) {
+      throw new ReferenceError('Type field is missing')
+    }
+    this._obj = obj
+  }
+
+  /**
+   * The dynamic properties of the message
+   * @return any
+   */
+  get properties() {
+    return this._obj
+  }
+
+  /**
+   * Converts a this object to a json object
+   * @return 
