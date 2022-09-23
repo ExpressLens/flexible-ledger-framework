@@ -59,4 +59,21 @@ class UlaMessage {
 
   /**
    * Converts a this object to a json object
-   * @return 
+   * @return object
+   */
+  toJSON() {
+    return this._obj
+  }
+}
+
+exports.UlaMessage = UlaMessage
+
+/**
+ * @deprecated Please use UlaMessage
+ * @see UlaMessage
+ */
+class Message extends UlaMessage {
+}
+
+exports.Message = Message
+//# sourceMappingURL=ula-message.js.map
