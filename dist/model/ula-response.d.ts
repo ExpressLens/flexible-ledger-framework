@@ -11,4 +11,28 @@ export interface IUlaResponse {
 export declare class UlaResponse {
     private readonly _statusCode;
     private readonly _body;
-    private readonly _
+    private readonly _error?;
+    constructor(ulaResponse: IUlaResponse);
+    /**
+     * Status code
+     * @return any
+     */
+    get statusCode(): any;
+    /**
+     * The dynamic body
+     * @return any
+     */
+    get body(): any;
+    /**
+     * (Optional) error
+     * @return Error|undefined
+     */
+    get error(): Error | undefined;
+    /**
+     * Converts a this object to a json object
+     * NOTE: Some properties of the Error might
+     *       be lost after serializing.
+     * @return object
+     */
+    toJSON(): object;
+}
