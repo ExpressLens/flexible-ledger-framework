@@ -15,4 +15,14 @@ export declare class UlaMessage {
      */
     get properties(): any;
     /**
-     * Converts a this object 
+     * Converts a this object to a json object
+     * @return object
+     */
+    toJSON(): object;
+}
+/**
+ * @deprecated Please use UlaMessage
+ * @see UlaMessage
+ */
+export declare class Message extends UlaMessage {
+}
