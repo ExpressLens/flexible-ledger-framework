@@ -52,4 +52,5 @@ exports.UlaMessage = UlaMessage;
  */
 class Message extends UlaMessage {
 }
-exports.M
+exports.Message = Message;
+//# sourceMappingURL=ulaMessage.js.map
