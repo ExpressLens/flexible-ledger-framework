@@ -24,4 +24,32 @@ Object.defineProperty(exports, "__esModule", { value: true });
  * event.
  */
 class UlaMessage {
-    constructor(
+    constructor(obj) {
+        if (!obj.type) {
+            throw new ReferenceError('Type field is missing');
+        }
+        this._obj = obj;
+    }
+    /**
+     * The dynamic properties of the message
+     * @return any
+     */
+    get properties() {
+        return this._obj;
+    }
+    /**
+     * Converts a this object to a json object
+     * @return object
+     */
+    toJSON() {
+        return this._obj;
+    }
+}
+exports.UlaMessage = UlaMessage;
+/**
+ * @deprecated Please use UlaMessage
+ * @see UlaMessage
+ */
+class Message extends UlaMessage {
+}
+exports.M
