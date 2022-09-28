@@ -13,4 +13,5 @@ export declare class BrowserHttpService implements HttpService {
      * @param {string} postBody
      * @return Object json object
      */
-    postRequest(url: string, postBody: obj
+    postRequest(url: string, postBody: object): Promise<object>;
+}
