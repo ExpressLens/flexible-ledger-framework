@@ -34,4 +34,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
         function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { st
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+Object.defineProperty(exports, "__esModule", {value: true})
+exports.BrowserHttpService = void 0
+class BrowserHttpService {
+    /**
+     * Perform a JSON GET-request and wait
+     * for response
+     * @param {string} url
+     * @return Object the json object response
+     */
+    getRequest(ur
