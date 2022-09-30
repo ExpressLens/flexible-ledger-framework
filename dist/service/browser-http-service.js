@@ -66,4 +66,21 @@ class BrowserHttpService {
      * @return Object json object
      */
     postRequest(url, postBody) {
-        return __awaiter(this, void 0, v
+        return __awaiter(this, void 0, void 0, function* () {
+            const result = yield fetch(url, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(postBody)
+            });
+            const data = yield result.json();
+            if (data.hasOwnProperty('error')) {
+                throw new Error(data.error);
+            }
+            if (!result.ok) {
+                throw new Error(result.statusText);
+            }
+            return data;
+        });
+    }
+}
+exports.BrowserHttpService = BrowserHttpSe
