@@ -83,4 +83,5 @@ class BrowserHttpService {
         });
     }
 }
-exports.BrowserHttpService = BrowserHttpSe
+exports.BrowserHttpService = BrowserHttpService;
+//# sourceMappingURL=browser-http-service.js.map
