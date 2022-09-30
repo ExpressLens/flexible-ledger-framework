@@ -48,4 +48,22 @@ class BrowserHttpService {
      * @param {string} url
      * @return Object the json object response
      */
-    getRequest(ur
+    getRequest(url) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const result = yield fetch(url, {
+                headers: { 'Content-Type': 'application/json' }
+            });
+            if (!result.ok) {
+                throw new Error(result.statusText);
+            }
+            return result.json();
+        });
+    }
+    /**
+     * Perform a POST-request and get the json contents back
+     * @param {string} url
+     * @param {string} postBody
+     * @return Object json object
+     */
+    postRequest(url, postBody) {
+        return __awaiter(this, void 0, v
