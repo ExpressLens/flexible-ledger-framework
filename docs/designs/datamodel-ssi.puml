@@ -1,0 +1,14 @@
+@startuml ssi
+object Attestor
+object Transaction
+object Attestation
+
+skinparam roundcorner 20
+hide empty members
+
+Attestor -right-|> Transaction
+Transaction --|> Attestation
+Attestor --|> Attestation
+
+Attestor : name: string
+Attestor : icon: string
