@@ -29,4 +29,11 @@ Transaction : error?: string
 
 Attestation : uuid?: string
 Attestation : attestorPubKey: string
-Attestation : forPubKey
+Attestation : forPubKey?: string
+Attestation : context: string[]
+Attestation : type: string[]
+Attestation : expires?: Date | string
+Attestation : datetime: Date | string
+Attestation : statements: any
+
+@enduml
