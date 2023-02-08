@@ -15,4 +15,24 @@
     "clean": "rm -rf ./dist",
     "compile": "./node_modules/.bin/tsc",
     "test": "./node_modules/.bin/nyc --check-coverage --lines 80 ./node_modules/.bin/mocha \"test/**/*.test.ts\"",
-    "prep
+    "prepublishOnly": "npm run clean && npm run compile && npm run lint && npm run test",
+    "stryker": "./node_modules/.bin/stryker run",
+    "coverage": "./node_modules/.bin/nyc report",
+    "lint": "tslint -p ./",
+    "postinstall": ""
+  },
+  "keywords": [
+    "plugin",
+    "SSI",
+    "module",
+    "framework",
+    "DLT",
+    "distributed",
+    "blockchain"
+  ],
+  "contributors": [
+    "Marnix van den Bent <marnix.van.den.bent@rabobank.nl>",
+    "Jarl Nieuwenhuijzen <jarl.nieuwenhuijzen@rabobank.nl>"
+  ],
+  "license": "Apache-2.0",
+  "repository": {
