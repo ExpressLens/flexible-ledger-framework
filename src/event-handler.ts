@@ -43,4 +43,26 @@ export class EventHandler {
         try {
           statusCode = await plugin.handleEvent(new UlaMessage(jsonObject), callback)
         } catch (err) {
-          statusCode = err instanceof UlaError ? err.statusCode :
+          statusCode = err instanceof UlaError ? err.statusCode : 'error' // Unknown error
+          callback(new UlaResponse({ statusCode, body: {}, error: err }))
+        } finally {
+          resolve(new PluginResult(plugin.name, statusCode))
+        }
+      }))
+    }
+
+    return Promise.all(promises)
+  }
+
+  // /**
+  //  * Initializes and enables a new plugin.
+  //  * If the plugin already exists, it will be skipped.
+  //  * @param plugin
+  //  */
+  // loadPlugin (plugin: Plugin) {
+  //   if (this.enabledPlugins.indexOf(plugin) !== -1) {
+  //     plugin.initialize(this)
+  //     this.enabledPlugins.push(plugin)
+  //   }
+  //
+  //   if (this.disa
