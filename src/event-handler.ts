@@ -30,4 +30,17 @@ export class EventHandler {
 
   /**
    * Broadcasts a message (jsonObject) to all enabled plugins
-  
+   *
+   * @param jsonObject
+   * @param callback
+   */
+  async processMsg (jsonObject: any, callback: UlaCallback) {
+    const promises: Promise<PluginResult>[] = []
+    // Broadcast the event
+    for (const plugin of this.enabledPlugins) {
+      promises.push(new Promise(async (resolve) => {
+        let statusCode: string = 'unknown'
+        try {
+          statusCode = await plugin.handleEvent(new UlaMessage(jsonObject), callback)
+        } catch (err) {
+          statusCode = err instanceof UlaError ? err.statusCode :
