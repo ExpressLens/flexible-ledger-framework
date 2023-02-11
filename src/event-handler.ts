@@ -65,4 +65,23 @@ export class EventHandler {
   //     this.enabledPlugins.push(plugin)
   //   }
   //
-  //   if (this.disa
+  //   if (this.disabledPlugins.indexOf(plugin) !== -1) {
+  //     this.disabledPlugins.slice(this.disabledPlugins.indexOf(plugin), 1)
+  //   }
+  // }
+  //
+  // /**
+  //  * Enables a disabled (but loaded) plugin.
+  //  * The plugin will receive new messages and data requests.
+  //  * @param plugin
+  //  */
+  // enablePlugin (plugin: Plugin) {
+  //   if (this.disabledPlugins.indexOf(plugin) !== -1) {
+  //     this.disabledPlugins.slice(this.disabledPlugins.indexOf(plugin), 1)
+  //     this.enabledPlugins.push(plugin)
+  //   }
+  // }
+  //
+  // /**
+  //  * Disables a loaded plugin.
+  //  * 
