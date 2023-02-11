@@ -84,4 +84,13 @@ export class EventHandler {
   //
   // /**
   //  * Disables a loaded plugin.
-  //  * 
+  //  * The plugin will not receive messages and data requests.
+  //  * @param plugin
+  //  */
+  // disablePlugin (plugin: Plugin) {
+  //   if (this.enabledPlugins.indexOf(plugin) !== -1) {
+  //     this.enabledPlugins.slice(this.enabledPlugins.indexOf(plugin), 1)
+  //     this.disabledPlugins.push(plugin)
+  //   }
+  // }
+}
