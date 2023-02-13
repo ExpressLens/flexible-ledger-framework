@@ -1,3 +1,4 @@
+
 /*
  * Copyright 2020 Coöperatieve Rabobank U.A.
  *
@@ -14,23 +15,11 @@
  * limitations under the License.
  */
 
-export enum GenericStatusCode {
+export interface HttpService {
   /**
-   * In case your plugin ignored
-   * the incoming message.
+   * Perform a JSON GET-request and wait
+   * for response
+   * @param {string} url
+   * @return the json object response
    */
-  Ignored = 'ignored',
-
-  /**
-   * Generic, unknown error
-   * Please use a more specific
-   * error code in your plugin!
-   */
-  Error = 'error',
-
-  /**
-   * Use this code once your plugin
-   * successfully finished its work.
-   */
-  Success = 'success'
-}
+  getRequest (url: string): Promise<any>
