@@ -23,3 +23,12 @@ export interface HttpService {
    * @return the json object response
    */
   getRequest (url: string): Promise<any>
+
+  /**
+   * Perform a POST-request
+   * @param {string} url
+   * @param {object} postBody
+   * @return Object json object
+   */
+  postRequest (url: string, postBody: object): Promise<object>
+}
