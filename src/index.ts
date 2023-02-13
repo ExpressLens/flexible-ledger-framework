@@ -38,4 +38,6 @@ export { HttpService } from './interface/http-service'
 
 export { UlaCallback } from './interface/ula-callback'
 
-export { BrowserHtt
+export { BrowserHttpService } from './service/browser-http-service'
+
+export { GenericStatusCode } from './interface/generic-status-code'
