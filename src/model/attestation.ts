@@ -23,4 +23,25 @@ export interface IAttestation {
   forPubKey?: string // This is the receiver of the attestation
   context: string[]
   type: string[]
-  expires?: Date | strin
+  expires?: Date | string
+  datetime: Date | string
+  statements: any
+}
+
+/**
+ * All data sources and ULA plugins
+ * must eventually transform their
+ * attestations / credentials back
+ * to this model.
+ */
+export class Attestation {
+  private readonly _uuid: string
+  private readonly _attestorPubKey: string
+  private readonly _forPubKey?: string
+  private readonly _context: string[]
+  private readonly _type: string[]
+  private readonly _expires?: Date
+  private readonly _datetime: Date
+  private readonly _statements: any
+
+  constructor (at
