@@ -44,4 +44,15 @@ export class Attestation {
   private readonly _datetime: Date
   private readonly _statements: any
 
-  constructor (at
+  constructor (attestation: IAttestation) {
+    if (!attestation.attestorPubKey || !attestation.context || attestation.context.length === 0
+      || attestation.type.length === 0 || !attestation.statements || attestation.statements.length === 0) {
+      throw new ReferenceError('One or more fields are empty')
+    }
+
+    this._uuid = attestation.uuid || uuid()
+    this._attestorPubKey = attestation.attestorPubKey
+    this._forPubKey = attestation.forPubKey
+    this._context = attestation.context
+    this._type = attestation.type
+    this._expires = attestation.expires ? new Date(att
