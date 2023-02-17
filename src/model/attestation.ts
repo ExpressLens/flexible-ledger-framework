@@ -55,4 +55,33 @@ export class Attestation {
     this._forPubKey = attestation.forPubKey
     this._context = attestation.context
     this._type = attestation.type
-    this._expires = attestation.expires ? new Date(att
+    this._expires = attestation.expires ? new Date(attestation.expires) : undefined
+    this._datetime = new Date(attestation.datetime)
+    this._statements = attestation.statements
+  }
+
+  /**
+   * The uuid of this attestation
+   * @return string
+   */
+  @Expose()
+  get uuid (): string {
+    return this._uuid
+  }
+
+  /**
+   * The attestor/issuer public key
+   * (Can also be a DID)
+   * @return string
+   */
+  @Expose()
+  get attestorPubKey (): string {
+    return this._attestorPubKey
+  }
+
+  /**
+   * The forPubKey (the subject/holder)
+   * @return {string|undefined}
+   */
+  @Expose()
+  get forPubKey (): str
