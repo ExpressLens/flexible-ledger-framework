@@ -84,4 +84,38 @@ export class Attestation {
    * @return {string|undefined}
    */
   @Expose()
-  get forPubKey (): str
+  get forPubKey (): string | undefined {
+    return this._forPubKey
+  }
+
+  /**
+   * Gives context to the contents of
+   * this attestation. Usually this is
+   * a collection of schema.org url's.
+   * @return {string[]}
+   */
+  @Expose()
+  get context (): string[] {
+    return this._context
+  }
+
+  /**
+   * Room for various types/properties
+   * @return {string[]}
+   */
+  @Expose()
+  get type (): string[] {
+    return this._type
+  }
+
+  /**
+   * The expiry time of this attestation
+   * @return {Date|undefined}
+   */
+  @Expose()
+  get expires (): Date | undefined {
+    return this._expires
+  }
+
+  /**
+   * The datetime when this atte
