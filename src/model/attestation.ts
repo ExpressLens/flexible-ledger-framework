@@ -118,4 +118,32 @@ export class Attestation {
   }
 
   /**
-   * The datetime when this atte
+   * The datetime when this attestation
+   * was issued.
+   * @return Date
+   */
+  @Expose()
+  get datetime (): Date {
+    return new Date(this._datetime)
+  }
+
+  /**
+   * The statements of this attestation.
+   * This is a key-value pair array, just
+   * like a set of claims or CredentialSubjects.
+   * @return any
+   */
+  @Expose()
+  get statements (): any {
+    return this._statements
+  }
+
+  /**
+   * Converts this object to a json object
+   * @return object
+   */
+  public toJSON (): object {
+    return classToPlain(this, { excludePrefixes: ['_'] })
+  }
+
+}
