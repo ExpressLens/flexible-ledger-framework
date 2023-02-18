@@ -8,4 +8,22 @@
  *     http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+import { classToPlain, Expose } from 'class-transformer'
+
+/**
+ * An array of PluginResults will be
+ * returned by the ULA after handling
+ * all messages
+ */
+export class PluginResult {
+  private readonly _pluginName: string
+  private readonly _statusCode: string
+
+  constructor (pluginName: string, statusCode: any) {
+    this._plu
