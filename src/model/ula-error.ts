@@ -25,4 +25,28 @@ export class UlaError extends Error {
 
   constructor (statusCode: string, message: string) {
     super(message)
-    this._statusC
+    this._statusCode = statusCode
+    Object.setPrototypeOf(this, UlaError.prototype)
+  }
+
+  /**
+   * Status code
+   * @return any
+   */
+  @Expose()
+  public get statusCode (): any {
+    return this._statusCode
+  }
+
+  /**
+   * Converts a this object to a json object
+   * @return object
+   */
+  public toJSON (): object {
+    return {
+      statusCode: this.statusCode,
+      message: this.message,
+      stack: this.stack
+    }
+  }
+}
