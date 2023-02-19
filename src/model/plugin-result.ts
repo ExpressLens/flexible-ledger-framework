@@ -26,4 +26,33 @@ export class PluginResult {
   private readonly _statusCode: string
 
   constructor (pluginName: string, statusCode: any) {
-    this._plu
+    this._pluginName = pluginName
+    this._statusCode = statusCode
+  }
+
+  /**
+   * The plugin exited with
+   * this status code
+   * @return any
+   */
+  @Expose()
+  public get statusCode (): any {
+    return this._statusCode
+  }
+
+  /**
+   * The name of the plugin
+   * (Plugin.name property)
+   * @return string
+   */
+  @Expose()
+  public get pluginName (): string {
+    return this._pluginName
+  }
+
+  /**
+   * Converts a this object to a json object
+   * @return object
+   */
+  public toJSON (): object {
+    return classToPlain(this, { excludePref
