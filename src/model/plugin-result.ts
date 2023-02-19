@@ -55,4 +55,6 @@ export class PluginResult {
    * @return object
    */
   public toJSON (): object {
-    return classToPlain(this, { excludePref
+    return classToPlain(this, { excludePrefixes: ['_'] })
+  }
+}
