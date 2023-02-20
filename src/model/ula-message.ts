@@ -17,4 +17,32 @@
 /**
  * The UlaMessage type is used to
  * send messages (events) to ULA plugins.
- * The object is entirely dyna
+ * The object is entirely dynamic, but it
+ * does require a 'type' field, so the
+ * plugins can recognize (or ignore) the
+ * event.
+ */
+export class UlaMessage {
+  private readonly _obj: any
+
+  constructor (obj: any) {
+    if (!obj.type) {
+      throw new ReferenceError('Type field is missing')
+    }
+
+    this._obj = obj
+  }
+
+  /**
+   * The dynamic properties of the message
+   * @return any
+   */
+  public get properties (): any {
+    return this._obj
+  }
+
+  /**
+   * Converts a this object to a json object
+   * @return object
+   */
+ 
