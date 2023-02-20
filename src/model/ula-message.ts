@@ -45,4 +45,16 @@ export class UlaMessage {
    * Converts a this object to a json object
    * @return object
    */
- 
+  public toJSON (): object {
+    return this._obj
+  }
+
+}
+
+/**
+ * @deprecated Please use UlaMessage
+ * @see UlaMessage
+ */
+export class Message extends UlaMessage {
+
+}
