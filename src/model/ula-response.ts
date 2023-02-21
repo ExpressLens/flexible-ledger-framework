@@ -28,4 +28,35 @@ export interface IUlaResponse {
  * a statuscode and a dynamic body.
  */
 export class UlaResponse {
-  private readonly _sta
+  private readonly _statusCode: any
+  private readonly _body: any
+  private readonly _error?: Error
+
+  constructor (ulaResponse: IUlaResponse) {
+    this._statusCode = ulaResponse.statusCode
+    this._body = ulaResponse.body
+    this._error = ulaResponse.error
+  }
+
+  /**
+   * Status code
+   * @return any
+   */
+  @Expose()
+  public get statusCode (): any {
+    return this._statusCode
+  }
+
+  /**
+   * The dynamic body
+   * @return any
+   */
+  @Expose()
+  public get body (): any {
+    return this._body
+  }
+
+  /**
+   * (Optional) error
+   * @return Error|undefined
+ 
