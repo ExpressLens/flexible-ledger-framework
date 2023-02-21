@@ -59,4 +59,24 @@ export class UlaResponse {
   /**
    * (Optional) error
    * @return Error|undefined
- 
+   */
+  @Expose()
+  public get error (): Error | undefined {
+    return this._error
+  }
+
+  /**
+   * Converts a this object to a json object
+   * NOTE: Some properties of the Error might
+   *       be lost after serializing.
+   * @return object
+   */
+  public toJSON (): object {
+    const plainObject = classToPlain(this, { excludePrefixes: ['_'] }) as any
+    plainObject.error = this._error ? {
+      message: this._error.message,
+      stack: this._error.stack
+    } : undefined
+    return plainObject as object
+  }
+}
