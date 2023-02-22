@@ -36,3 +36,21 @@ export class BrowserHttpService implements HttpService {
 
   /**
    * Perform a POST-request and get the json contents back
+   * @param {string} url
+   * @param {string} postBody
+   * @return Object json object
+   */
+  public async postRequest (url: string, postBody: object): Promise<object> {
+    const result = await fetch(url,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(postBody)
+      })
+
+    const data: any = await result.json()
+    if (data.hasOwnProperty('error')) {
+      throw new Error(data.error)
+    }
+    if (!result.ok) {
+      throw new Error(result.statu
