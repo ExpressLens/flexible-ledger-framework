@@ -53,4 +53,8 @@ export class BrowserHttpService implements HttpService {
       throw new Error(data.error)
     }
     if (!result.ok) {
-      throw new Error(result.statu
+      throw new Error(result.statusText)
+    }
+    return data
+  }
+}
