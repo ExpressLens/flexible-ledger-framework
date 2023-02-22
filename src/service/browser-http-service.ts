@@ -14,4 +14,25 @@
  * limitations under the License.
  */
 
-import { Http
+import { HttpService } from '..'
+
+export class BrowserHttpService implements HttpService {
+  /**
+   * Perform a JSON GET-request and wait
+   * for response
+   * @param {string} url
+   * @return Object the json object response
+   */
+  public async getRequest (url: string): Promise<object> {
+    const result = await fetch(url,
+      {
+        headers: { 'Content-Type': 'application/json' }
+      })
+    if (!result.ok) {
+      throw new Error(result.statusText)
+    }
+    return result.json()
+  }
+
+  /**
+   * Perform a POST-request and get the json contents back
