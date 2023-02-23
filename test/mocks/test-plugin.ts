@@ -35,4 +35,24 @@ export class TestPlugin implements Plugin {
   }
 
   static get rangeErrorToThrow (): RangeError {
-    r
+    return new RangeError('Something was out of bounds')
+  }
+
+  set shouldThrow (value: ErrorTypeToThrow) {
+    this._shouldThrow = value
+  }
+
+  initialize (eventHandler: EventHandler) {
+    this._eventHandler = eventHandler
+  }
+
+  async handleEvent (message: UlaMessage, callback: UlaCallback): Promise<string> {
+    if (message.properties.type !== 'test') {
+      return 'ignored' // This message is not intended for us
+    }
+
+    if (this._shouldThrow === ErrorTypeToThrow.UlaError) {
+      throw TestPlugin.ulaErrorToThrow
+    }
+
+    if (this._s
