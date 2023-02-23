@@ -14,4 +14,25 @@
  * limitations under the License.
  */
 
-im
+import { EventHandler, UlaMessage, Plugin, UlaCallback, UlaError, UlaResponse } from '../../src'
+
+export enum ErrorTypeToThrow {
+  None = 0,
+  UlaError = 1,
+  RangeError = 2
+}
+
+export class TestPlugin implements Plugin {
+  private _eventHandler: EventHandler | undefined
+  private _shouldThrow: ErrorTypeToThrow = ErrorTypeToThrow.None
+
+  get name () {
+    return 'TestPlugin'
+  }
+
+  static get ulaErrorToThrow (): UlaError {
+    return new UlaError('error-code', 'Something went wrong')
+  }
+
+  static get rangeErrorToThrow (): RangeError {
+    r
