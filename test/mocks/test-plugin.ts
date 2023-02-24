@@ -55,4 +55,17 @@ export class TestPlugin implements Plugin {
       throw TestPlugin.ulaErrorToThrow
     }
 
-    if (this._s
+    if (this._shouldThrow === ErrorTypeToThrow.RangeError) {
+      throw TestPlugin.rangeErrorToThrow
+    }
+
+    callback(new UlaResponse({
+      statusCode: 200,
+      body: {
+        dude: 'It is working!'
+      }
+    }))
+
+    return 'success'
+  }
+}
