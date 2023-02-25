@@ -18,4 +18,18 @@ import { assert } from 'chai'
 import { Attestation } from '../../../src'
 import { testAttestation } from '../test-helper'
 
-describe('Attes
+describe('Attestation getters', function () {
+  const sut = new Attestation(testAttestation)
+
+  it('should return an unchanged id', () => {
+    assert.strictEqual(sut.uuid, testAttestation.uuid)
+  })
+
+  it('should return an unchanged type', () => {
+    assert.strictEqual(sut.attestorPubKey, testAttestation.attestorPubKey)
+  })
+
+  it('should return an unchanged expired field', () => {
+    const testAttestationWithExpiresField = Object.assign({}, testAttestation)
+    testAttestationWithExpiresField.expires = new Date('01-01-2019 12:34')
+    const attestati
