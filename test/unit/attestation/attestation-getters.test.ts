@@ -32,4 +32,11 @@ describe('Attestation getters', function () {
   it('should return an unchanged expired field', () => {
     const testAttestationWithExpiresField = Object.assign({}, testAttestation)
     testAttestationWithExpiresField.expires = new Date('01-01-2019 12:34')
-    const attestati
+    const attestationSut = new Attestation(testAttestationWithExpiresField)
+
+    const sutExpiresValue = attestationSut.expires as Date
+    assert.strictEqual(sutExpiresValue.toISOString(), testAttestationWithExpiresField.expires.toISOString())
+  })
+
+  it('should flatten an object using JSON.stringify()', () => {
+    assert.strictEqual(JSON.stringify(sut), `{"uuid":"8a96f441-e856-4cde-aebe-49d812016f8c","attestorPubKey":"0x41507f9034E043545CdAcD89c32cf3b6484172A7","forPubKey":"0x38e9ED09c48a435274F27794bf5Ee895DaAb22F0","context":["https://schema.org"],"type":["typeOfMessage"],"datetime":
