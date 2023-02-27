@@ -39,4 +39,6 @@ describe('Attestation getters', function () {
   })
 
   it('should flatten an object using JSON.stringify()', () => {
-    assert.strictEqual(JSON.stringify(sut), `{"uuid":"8a96f441-e856-4cde-aebe-49d812016f8c","attestorPubKey":"0x41507f9034E043545CdAcD89c32cf3b6484172A7","forPubKey":"0x38e9ED09c48a435274F27794bf5Ee895DaAb22F0","context":["https://schema.org"],"type":["typeOfMessage"],"datetime":
+    assert.strictEqual(JSON.stringify(sut), `{"uuid":"8a96f441-e856-4cde-aebe-49d812016f8c","attestorPubKey":"0x41507f9034E043545CdAcD89c32cf3b6484172A7","forPubKey":"0x38e9ED09c48a435274F27794bf5Ee895DaAb22F0","context":["https://schema.org"],"type":["typeOfMessage"],"datetime":"${sut.datetime.toISOString()}","statements":{"https://schema.org/familyName":"Janssen"}}`)
+  })
+})
