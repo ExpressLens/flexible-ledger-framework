@@ -24,4 +24,23 @@ const testData = {
   datetime: (new Date()).toISOString()
   // transactions?: Transaction[]
   // receivedAttestations?: Attestation[]
-  // issuedAttesta
+  // issuedAttestations?: Attestation[]
+}
+
+const testAttestation = new Attestation({
+  uuid: '8a96f441-e856-4cde-aebe-49d812016f8c',
+  attestorPubKey: '0x41507f9034E043545CdAcD89c32cf3b6484172A7',
+  forPubKey: '0x38e9ED09c48a435274F27794bf5Ee895DaAb22F0',
+  context: ['https://schema.org'],
+  type: ['typeOfMessage'],
+  // expires?: number // timestamp, optional
+  datetime: new Date(),
+  statements: {
+    'https://schema.org/familyName': 'Janssen'
+  } as any
+})
+
+describe('Attestor getters', function () {
+  const sut = new Attestor(testData)
+
+  it('should return an unch
