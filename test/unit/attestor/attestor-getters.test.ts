@@ -43,4 +43,21 @@ const testAttestation = new Attestation({
 describe('Attestor getters', function () {
   const sut = new Attestor(testData)
 
-  it('should return an unch
+  it('should return an unchanged name', () => {
+    assert.strictEqual(sut.name, testData.name)
+  })
+
+  it('should return an unchanged icon', () => {
+    assert.strictEqual(sut.icon, testData.icon)
+  })
+
+  it('should return an unchanged pubKey', () => {
+    assert.strictEqual(sut.pubKey, testData.pubKey)
+  })
+
+  it('should return an unchanged dateTime', () => {
+    assert.strictEqual(sut.datetime.toISOString(), testData.datetime)
+  })
+
+  it('should flatten an object using JSON.stringify()', () => {
+    assert.strictEqual(JSON.stringify(sut), `{"name":"string","icon
