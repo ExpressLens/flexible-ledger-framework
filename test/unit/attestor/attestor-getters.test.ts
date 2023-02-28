@@ -60,4 +60,26 @@ describe('Attestor getters', function () {
   })
 
   it('should flatten an object using JSON.stringify()', () => {
-    assert.strictEqual(JSON.stringify(sut), `{"name":"string","icon
+    assert.strictEqual(JSON.stringify(sut), `{"name":"string","icon":"string","pubKey":"string","datetime":"${sut.datetime.toISOString()}"}`)
+  })
+})
+
+
+describe('Attestor setters', function () {
+  it('should set new transactions', () => {
+    const sut1 = new Attestor(Object.assign({}, testData))
+
+    sut1.transactions = []
+
+    assert.deepEqual([], sut1.transactions)
+  })
+
+  it('should set new issuedAttestations', () => {
+    const sut1 = new Attestor(Object.assign({}, testData))
+
+    sut1.issuedAttestations = [testAttestation]
+
+    assert.deepEqual([testAttestation], sut1.issuedAttestations)
+  })
+
+  it('should set new receive
