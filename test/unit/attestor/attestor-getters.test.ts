@@ -82,4 +82,11 @@ describe('Attestor setters', function () {
     assert.deepEqual([testAttestation], sut1.issuedAttestations)
   })
 
-  it('should set new receive
+  it('should set new receivedAttestations', () => {
+    const sut1 = new Attestor(Object.assign({}, testData))
+
+    sut1.receivedAttestations = [testAttestation]
+
+    assert.deepEqual([testAttestation], sut1.receivedAttestations)
+  })
+})
