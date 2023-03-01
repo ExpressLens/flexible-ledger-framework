@@ -15,4 +15,27 @@
  */
 
 import * as chai from 'chai'
-import * as sinon fr
+import * as sinon from 'sinon'
+import * as chaiAsPromised from 'chai-as-promised'
+import * as sinonChai from 'sinon-chai'
+import * as fetchMock from 'fetch-mock'
+import { BrowserHttpService } from '../../../src'
+
+before(() => {
+  chai.should()
+  chai.use(chaiAsPromised)
+  chai.use(sinonChai)
+})
+
+describe('http service', function () {
+  const url = 'https://example.org'
+  let sut = new BrowserHttpService()
+  const jsonResponse = { test: 'succeeded' }
+
+  afterEach(() => {
+    fetchMock.restore()
+    sinon.restore()
+    sut = new BrowserHttpService()
+  })
+
+ 
