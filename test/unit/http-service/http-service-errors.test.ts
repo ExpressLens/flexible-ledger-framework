@@ -38,4 +38,16 @@ describe('http service', function () {
     sut = new BrowserHttpService()
   })
 
- 
+  describe('getRequest errors', function () {
+    it('should call the url and return the response in json format', async () => {
+      fetchMock.get(url, jsonResponse)
+      const call = await sut.getRequest(url)
+
+      fetchMock.called(url).should.equal(true)
+      // @ts-ignore
+      fetchMock.lastOptions().headers.should.deep.equal({ 'Content-Type': 'application/json' })
+      return call.should.deep.equal(jsonResponse)
+    })
+
+    it('should call the url and throw error for HTTP code 400', () => {
+      fetchMock.get(url, { body: { isTestValue: true }, status: 400 
