@@ -50,4 +50,21 @@ describe('http service', function () {
     })
 
     it('should call the url and throw error for HTTP code 400', () => {
-      fetchMock.get(url, { body: { isTestValue: true }, status: 400 
+      fetchMock.get(url, { body: { isTestValue: true }, status: 400 })
+      const call = sut.getRequest(url)
+
+      fetchMock.called(url).should.equal(true)
+      return call.should.be.rejectedWith('Bad Request')
+    })
+
+    it('should call the url and throw error for HTTP code 500', () => {
+      fetchMock.get(url, { body: { isTestValue: true }, status: 500 })
+      const call = sut.getRequest(url)
+
+      fetchMock.called(url).should.equal(true)
+      return call.should.be.rejectedWith('Internal Server Error')
+    })
+  })
+
+  describe('postRequest errors', function () {
+    
