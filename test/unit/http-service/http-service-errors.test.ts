@@ -67,4 +67,15 @@ describe('http service', function () {
   })
 
   describe('postRequest errors', function () {
-    
+    const postPayload = { entity: 'value', nestedObject: { obj: true, name: 'nest' } }
+    it('should call the url and return the response in json format', async () => {
+      fetchMock.post(url, jsonResponse)
+      const call = await sut.postRequest(url, postPayload)
+
+      fetchMock.called(url).should.equal(true)
+      // @ts-ignore
+      fetchMock.lastOptions().headers.should.deep.equal({ 'Content-Type': 'application/json' })
+      return call.should.deep.equal(jsonResponse)
+    })
+
+    it('should call the url and throw error for HTT
