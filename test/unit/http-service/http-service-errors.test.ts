@@ -78,4 +78,17 @@ describe('http service', function () {
       return call.should.deep.equal(jsonResponse)
     })
 
-    it('should call the url and throw error for HTT
+    it('should call the url and throw error for HTTP code 400', () => {
+      fetchMock.post(url, { body: { isTestValue: true }, status: 400 })
+      const call = sut.postRequest(url, postPayload)
+
+      fetchMock.called(url).should.equal(true)
+      return call.should.be.rejectedWith('Bad Request')
+    })
+
+    it('should call the url and throw error for HTTP code 500', () => {
+      fetchMock.post(url, { body: { testValue: true }, status: 500 })
+      const call = sut.postRequest(url, postPayload)
+
+      fetchMock.called(url).should.equal(true)
+      return call.shou
