@@ -11,4 +11,27 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
- * li
+ * limitations under the License.
+ */
+
+import { assert } from 'chai'
+import { PluginResult } from '../../../src'
+
+const testData = {
+  pluginName: 'plugin-name',
+  statusCode: 'success'
+}
+
+describe('PluginResult constructor', function () {
+
+  it('should not throw on valid inputs', () => {
+    const createSut = () => {
+      return new PluginResult(testData.pluginName, testData.statusCode)
+    }
+
+    createSut()
+    assert.doesNotThrow(createSut)
+  })
+
+  it('should serialize and parse properly', () => {
+    const sut1 = new PluginResult(testDa
