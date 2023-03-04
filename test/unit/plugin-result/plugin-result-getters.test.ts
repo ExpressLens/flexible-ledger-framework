@@ -1,3 +1,4 @@
+
 /*
  * Copyright 2020 Coöperatieve Rabobank U.A.
  *
@@ -22,21 +23,18 @@ const testData = {
   statusCode: 'success'
 }
 
-describe('PluginResult constructor', function () {
+describe('PluginResult getters', function () {
+  const sut = new PluginResult(testData.pluginName, testData.statusCode)
 
-  it('should not throw on valid inputs', () => {
-    const createSut = () => {
-      return new PluginResult(testData.pluginName, testData.statusCode)
-    }
-
-    createSut()
-    assert.doesNotThrow(createSut)
+  it('should return an unchanged statusCode', () => {
+    assert.strictEqual(sut.statusCode, testData.statusCode)
   })
 
-  it('should serialize and parse properly', () => {
-    const sut1 = new PluginResult(testData.pluginName, testData.statusCode)
-    const jsonObj = JSON.parse(JSON.stringify(sut1))
-    assert.strictEqual(jsonObj.pluginName, testData.pluginName)
-    assert.strictEqual(jsonObj.statusCode, testData.statusCode)
+  it('should return an unchanged pluginName', () => {
+    assert.strictEqual(sut.pluginName, testData.pluginName)
+  })
+
+  it('should flatten an object using JSON.stringify()', () => {
+    assert.strictEqual(JSON.stringify(sut), `{"statusCode":"success","pluginName":"plugin-name"}`)
   })
 })
