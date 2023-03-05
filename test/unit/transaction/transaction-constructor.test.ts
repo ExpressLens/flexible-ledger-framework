@@ -18,4 +18,26 @@ import { assert } from 'chai'
 import { ITransaction, Transaction } from '../../../src'
 
 const testData: ITransaction = {
-  uuid: '800aa58d-afdb-49eb-a5a2-fa4648d5
+  uuid: '800aa58d-afdb-49eb-a5a2-fa4648d58b29',
+  attestorPubKey: '0xfbe1505b99A1548523eCbf78699B08e4580624F9',
+  datetime: new Date().toISOString(),
+  attest: [],
+  revoke: [],
+  verifyRequest: []
+  // state: 'string',
+  // error: 'string'
+}
+
+describe('Transaction constructor', function () {
+  it('should not accept empty attestorPubKey field', () => {
+    let prep = Object.assign({}, testData)
+    prep.attestorPubKey = ''
+
+    const createSut = () => {
+      return new Transaction(prep)
+    }
+
+    assert.throws(createSut, ReferenceError, 'One or more fields are empty')
+  })
+
+  it('should n
