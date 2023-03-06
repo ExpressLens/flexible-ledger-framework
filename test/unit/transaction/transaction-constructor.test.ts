@@ -62,4 +62,24 @@ describe('Transaction constructor', function () {
     assert.doesNotThrow(createSut)
   })
 
-  it('should convert a JSON object to a Transaction 
+  it('should convert a JSON object to a Transaction class', () => {
+    const sut1 = new Transaction(testData)
+    const jsonObj = JSON.parse(JSON.stringify(sut1))
+    let sut2 = new Transaction(jsonObj)
+    assert.deepEqual(sut1, sut2)
+  })
+
+  it('should accept input without id', () => {
+    delete testData.uuid
+
+    let prep = Object.assign({}, testData)
+
+    const createSut = () => {
+      return new Transaction(prep)
+    }
+
+    createSut()
+    assert.doesNotThrow(createSut)
+  })
+
+})
