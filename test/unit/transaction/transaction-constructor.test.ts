@@ -40,4 +40,26 @@ describe('Transaction constructor', function () {
     assert.throws(createSut, ReferenceError, 'One or more fields are empty')
   })
 
-  it('should n
+  it('should not accept empty datetime field', () => {
+    let prep = Object.assign({}, testData)
+    prep.datetime = ''
+
+    const createSut = () => {
+      return new Transaction(prep)
+    }
+
+    assert.throws(createSut, ReferenceError, 'One or more fields are empty')
+  })
+
+  it('should not throw on valid inputs', () => {
+    let prep = Object.assign({}, testData)
+
+    const createSut = () => {
+      return new Transaction(prep)
+    }
+
+    createSut()
+    assert.doesNotThrow(createSut)
+  })
+
+  it('should convert a JSON object to a Transaction 
