@@ -15,4 +15,22 @@
  */
 
 import { assert } from 'chai'
-import { Transaction, Attestation } from '../../../src
+import { Transaction, Attestation } from '../../../src'
+
+const attestationData = new Attestation({
+  uuid: '8a96f441-e856-4cde-aebe-49d812016f8c',
+  attestorPubKey: '0x41507f9034E043545CdAcD89c32cf3b6484172A7',
+  forPubKey: '0x38e9ED09c48a435274F27794bf5Ee895DaAb22F0',
+  context: ['https://schema.org'],
+  type: ['typeOfMessage'],
+  // expires?: number // timestamp, optional
+  datetime: new Date(),
+  statements: {
+    'https://schema.org/familyName': 'Janssen'
+  }
+})
+
+const testData = {
+  uuid: '800aa58d-afdb-49eb-a5a2-fa4648d58b29',
+  attestorPubKey: '0xfbe1505b99A1548523eCbf78699B08e4580624F9',
+  dat
