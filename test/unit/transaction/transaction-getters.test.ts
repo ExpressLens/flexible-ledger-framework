@@ -33,4 +33,24 @@ const attestationData = new Attestation({
 const testData = {
   uuid: '800aa58d-afdb-49eb-a5a2-fa4648d58b29',
   attestorPubKey: '0xfbe1505b99A1548523eCbf78699B08e4580624F9',
-  dat
+  datetime: new Date().toISOString(),
+  attest: [attestationData],
+  revoke: [attestationData],
+  verifyRequest: [attestationData],
+  state: 'string',
+  error: 'string'
+}
+
+describe('Transaction getters', function () {
+  const sut = new Transaction(testData)
+
+  it('should return an unchanged uuid', () => {
+    assert.strictEqual(sut.uuid, testData.uuid)
+  })
+
+  it('should return an unchanged attestorPubKey', () => {
+    assert.strictEqual(sut.attestorPubKey, testData.attestorPubKey)
+  })
+
+  it('should return an unchanged datetime', () => {
+    assert.strictEqual(sut
