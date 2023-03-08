@@ -53,4 +53,23 @@ describe('Transaction getters', function () {
   })
 
   it('should return an unchanged datetime', () => {
-    assert.strictEqual(sut
+    assert.strictEqual(sut.datetime.toISOString(), testData.datetime)
+  })
+
+  it('should return an unchanged attest', () => {
+    assert.deepEqual(sut.attest, testData.attest)
+  })
+
+  it('should return an unchanged revoke', () => {
+    assert.deepEqual(sut.revoke, testData.revoke)
+  })
+
+  it('should return an unchanged verifyRequest', () => {
+    assert.deepEqual(sut.verifyRequest, testData.verifyRequest)
+  })
+
+  it('should return an unchanged state', () => {
+    assert.strictEqual(sut.state, testData.state)
+  })
+
+  it('should return an unchanged e
