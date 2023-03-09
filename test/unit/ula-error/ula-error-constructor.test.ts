@@ -24,4 +24,21 @@ const testData = {
 
 describe('UlaError constructor', function () {
 
-  it('should not throw on valid
+  it('should not throw on valid inputs', () => {
+    const createSut = () => {
+      return new UlaError(testData.statusCode, testData.message)
+    }
+
+    createSut()
+    assert.doesNotThrow(createSut)
+  })
+
+  it('should serialize and parse properly', () => {
+    const sut1 = new UlaError(testData.statusCode, testData.message)
+    const jsonObj = JSON.parse(JSON.stringify(sut1))
+    assert.strictEqual(jsonObj.statusCode, testData.statusCode)
+    assert.strictEqual(jsonObj.message, testData.message)
+    assert.isNotEmpty(jsonObj.stack)
+  })
+
+})
