@@ -30,4 +30,6 @@ describe('UlaError getters', function () {
   })
 
   it('should flatten an object using JSON.stringify()', () => {
-    assert.strictEqual(JSON.stringi
+    assert.strictEqual(JSON.stringify(sut), `{"statusCode":"error-code","message":"Something went wrong!","stack":${JSON.stringify(sut.stack)}}`)
+  })
+})
