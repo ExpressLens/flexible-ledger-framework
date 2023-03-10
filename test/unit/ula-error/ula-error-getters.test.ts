@@ -11,4 +11,23 @@
  * distributed under the License is distributed on an "AS IS" BASIS,
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
- 
+ * limitations under the License.
+ */
+
+import { assert } from 'chai'
+import { UlaError } from '../../../src'
+
+const testData = {
+  statusCode: 'error-code',
+  message: 'Something went wrong!'
+}
+
+describe('UlaError getters', function () {
+  const sut = new UlaError(testData.statusCode, testData.message)
+
+  it('should return an unchanged statusCode', () => {
+    assert.strictEqual(sut.statusCode, testData.statusCode)
+  })
+
+  it('should flatten an object using JSON.stringify()', () => {
+    assert.strictEqual(JSON.stringi
