@@ -25,4 +25,21 @@ const testData = {
   error: new UlaError('some-status-code', 'Something went wrong!')
 }
 
-describe('UlaResponse getters'
+describe('UlaResponse getters', function () {
+  const sut = new UlaResponse(testData)
+
+  it('should return an unchanged statusCode', () => {
+    assert.strictEqual(sut.statusCode, testData.statusCode)
+  })
+
+  it('should return an unchanged body', () => {
+    assert.strictEqual(sut.body, testData.body)
+  })
+
+  it('should return an unchanged error', () => {
+    assert.deepStrictEqual(sut.error, testData.error)
+  })
+
+  it('should flatten an object (with error) using JSON.stringify()', () => {
+    const sutError = sut.error as Error
+    assert.strictEqual(
